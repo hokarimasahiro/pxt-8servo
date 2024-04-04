@@ -2,8 +2,7 @@
     "name": "pxt-8servo",
     "description": "",
     "dependencies": {
-        "core": "*",
-        "microphone": "*"
+        "core": "*"
     },
     "files": [
         "README.md",
