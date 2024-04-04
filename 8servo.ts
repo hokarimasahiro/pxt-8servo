@@ -1,7 +1,7 @@
 /**
  * 8servo servo motor driver
  */
-//% weight=10 color=#800080 icon="\u261d" block="8servo"
+//% weight=10 color=#800080 icon="\uf2f1" block="8servo"
 namespace servo8 {
     let I2C_ADDR = 0x25
 
