@@ -52,39 +52,39 @@ namespace servo8 {
         return pins.i2cReadNumber(I2C_ADDR, NumberFormat.Float32LE);
     }
 
-    //% blockId="modeSet" block="modeSet ch:%ch mode:%m"
+    //% blockId="modeSet" block="modeSet ch %ch mode %m"
     export function modeSet(ch: number,m:number): void {
         setReg8(ch,m);
         return;
     }
-    //% blockId="outputD" block="outputD ch:%ch CTRL:%c"
+    //% blockId="outputD" block="outputD ch %ch ctrl %c"
     export function outputD(ch: number, c: number): void {
         setReg8(0x10 + ch, c);
         return;
     }
-    //% blockId="inputD" block="inputD ch:%ch"
+    //% blockId="inputD" block="inputD ch %ch"
     export function inputD(ch: number): number {
         return getReg8(0x20 + ch);
     }
-    //% blockId="input8" block="input8 ch:%ch"
+    //% blockId="input8" block="input8 ch %ch"
     export function input8(ch: number): number {
         return getReg8(0x30 + ch);
     }
-    //% blockId="input12" block="input12 ch:%ch"
+    //% blockId="input12" block="input12 ch %ch"
     export function input12(ch: number): number {
         return getReg16(0x40 + ch * 2);
     }
-    //% blockId="servo8" block="servo8 ch:%ch degree:%d"
+    //% blockId="servo8" block="servo8 ch %ch degree %d"
     export function servo8(ch: number, d: number): void {
         setReg8(0x50 + ch, d);
         return;
     }
-    //% blockId="servo16" block="servo16 ch:%ch microSecond:%us"
+    //% blockId="servo16" block="servo16 ch %ch microSecond %us"
     export function servo16(ch: number, us: number): void {
         setReg8(0x60 + ch * 2, us);
         return;
     }
-    //% blockId="setRGB" block="setRGB led:%led red:%r green:%g blue:%b"
+    //% blockId="setRGB" block="setRGB no %led red %r green %g blue %b"
     export function setRGB(led: number, r: number, g: number, b: number): void {
         let dat = [0, 0, 0];
         dat[0] = r;
@@ -93,7 +93,7 @@ namespace servo8 {
         setReg24(0x70 + led * 3, dat);
         return;
     }
-    //% blockId="setColor" block="setColor led:%led color:%c"
+    //% blockId="setColor" block="setColor no %led color %c"
     export function setColor(led: number, c: number): void {
         let dat = [0, 0, 0];
         dat[0] = c >> 16;
@@ -102,7 +102,7 @@ namespace servo8 {
         setReg24(0x70 + led * 3, dat);
         return;
     }
-    //% blockId="getColor" block="getColor red:%r green:%g blue:%b"
+    //% blockId="getColor" block="getColor red %r green %g blue %b"
     export function getColor(r: number, g: number, b: number): number {
         return (r * 256 + g) * 256 + b;
     }
