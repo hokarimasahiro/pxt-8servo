@@ -6,7 +6,8 @@
     },
     "files": [
         "README.md",
-        "8servo.ts"
+        "8servo.ts",
+        "_locales/ja/8servo-strings.json",
     ],
     "testFiles": [
         "test.ts"
